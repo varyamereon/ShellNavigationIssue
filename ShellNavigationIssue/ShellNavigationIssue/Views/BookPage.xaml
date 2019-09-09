@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="ShellNavigationIssue.Views.BookPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:ShellNavigationIssue"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:ShellNavigationIssue.ViewModels"
+             mc:Ignorable="d">
+
+    <ContentPage.BindingContext>
+
+        <viewModels:BookViewModel />
+
+    </ContentPage.BindingContext>
+
+    <Shell.SearchHandler>
+
+        <local:TitleBarSearchHandler />
+
+    </Shell.SearchHandler>
+
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+
+        <Label Text="{Binding CurrentBook.Name}"
+               HorizontalOptions="Center" />
+
+        <Label Text="{Binding CurrentBook.Author}"
+               HorizontalOptions="Center" />
+
+    </StackLayout>
+
+</ContentPage>
